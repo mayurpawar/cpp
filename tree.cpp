@@ -1,7 +1,3 @@
-// http://wudt.codeplex.com/
-// https://www.microsoft.com/en-us/software-download/windows10ISO
-//http://www.howtogeek.com/howto/9585/how-to-setup-a-usb-flash-drive-to-install-windows-7/
-
 // Binary Search Tree - Implemenation in C++
 // Author : Mayur Pawar (Pune, 2016)
 
