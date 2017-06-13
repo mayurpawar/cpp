@@ -101,6 +101,27 @@ void topView(node* root){
     }
 }
 
+BstNode* inOrderSuccesor(BstNode* root, int data){
+    BstNode* current=findNode(root, data);
+    if (current==NULL) return NULL;
+    if (current->right!=NULL) {
+        BstNode* temp=current->right;
+        while (temp->left!=NULL) temp=temp->left;
+        return temp;
+    }
+    else {
+        BstNode* successor=NULL;
+        BstNode* ansestor=root;
+        while (ansestor!=current) {
+            if (data<ansestor->data) {
+                successor=ansestor;
+                ansestor=ansestor->left;
+            }
+            else ansestor=ansestor->right;
+        }
+        return successor;
+    }
+}
 
 int main() {
     node* root = NULL;
@@ -118,6 +139,12 @@ int main() {
     //cout << maxElement(root);
     //cout << height(root);
     //BFS(root);
+    
     post(root);
+    BstNode* temp = inOrderSuccesor(root, 3);
+    cout << "Inorder Successor : ";
+    if (temp==NULL) cout << "No successor" << endl;
+    else cout << temp->data << endl;
+    
     //topView(root);
 }
